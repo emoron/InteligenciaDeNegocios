@@ -1,0 +1,83 @@
+Histogramas
+========================================================
+author: Edgardo Morales
+date: 21/Septiembre/2015
+width: 1440
+height: 900
+Visualizando Distribuciones
+========================================================
+
+Cuando tenemos conjuntos extremadamente grandes es sumamente
+complicado visualizar más de un conjunto de datos.
+
+```{r, echo=FALSE}
+library("ggplot2")
+qplot(price,data=diamonds,bindwidth=500) +  facet_wrap(~cut)
+qplot(carat,price,data=diamonds,bindwidth=500,color=cut) 
+```
+
+Agregar parametros al Aesthetic
+========================================================
+
+```{r, eval=FALSE}
+qplot(carat,price,data=diamonds,size=I(0.5))
+
+```
+
+Agregar parametros al Aesthetic
+========================================================
+
+```{r}
+qplot(carat,price,data=diamonds,alpha=I(0.1))
+
+```
+Agregar parametros al Aesthetic
+========================================================
+- Es posible convertir un "Aesthetic" en un parámetro encerrando
+el valor con I()
+```{r}
+
+
+qplot(carat,price,data=diamonds,size=I(0.5)
+                    ,alpha=I(0.1))
+```
+Exportando Gráficos en R
+========================================================
+
+```{r, eval=FALSE}
+
+#Usar el tamaño de la pantalla
+ggsave("myplot.pdf")
+
+ggsave("myplot-1.png")
+
+#Especificando el tamaño
+
+ggsave("myplot.pdf",width=6, height = 4)
+
+```
+
+Resumen
+========================================================
+- qplot + aesthetics = 100's plots
+- qplot + geom = 100
+- qplot + geoms + aesthetics = 100
+- aplot + geoms + aesthetics + parametros = 100,000
+
+Aspectos Opcionales de los gráficos
+========================================================
+- Visualizando Mapas
+```
+texas <- read.csv("texas.csv")
+head(texas)
+
+```
+Aspectos Opcionales de los gráficos
+========================================================
+- Visualizando Mapas
+```
+library(maps)
+counties <- map_data("county")
+qplot(long,lat,data=counties, geom="polygon", group = group, fill= group)
+
+```

@@ -1,0 +1,55 @@
+
+# Iniciando con R
+R es el más poderoso lenguaje de programación para estadistica numerica, fue desarrollado por un grupo de profesores para motivar a sus estudiantes a aprender estadística.
+
+R es completamente gratuito y está disponible para Windows, Mac y Linux y la instalacion es sumamente simple.
+
+![Imagen1](images/Introduccion/r-cran.png)
+
+Unicamente es necesario ir a http://www.r-project.org una vez ahi seleccionar la opcion **CRAN** y elegir uno de los sitios de descarga para nuestro caso seleccionamos **0-cloud**.
+
+![Imagen1](images/Introduccion/r-cran2.png)
+R se viene en tres diferentes versiones. Para nuestro caso instalaremos la version *base* desde la cual podremos instalar los paquetes adicionales de este curso. El tiempo de descarga varia de 5 a 10 min.
+
+![Imagen1](images/Introduccion/r-cran3.png)
+* base
+* contrib
+* R tools  
+
+
+
+
+R es un lenguaje muy popular y esto ha permitido a desarrolladores crear Editores más simples de usar que simplifican algunas de las  tareas más comunes.
+R Studio es un IDE para utilizar R se puede descargar directamente de http://www.rstudio.com.
+
+![Imagen2](images/Introduccion/rstudio1.png)
+
+## RStudio
+
+Es un potente editor para trabajar con R, el cual nos permite acceder a la carpeta de trabajo, instalación de paquetes adicionales, y manejo de objetos en memoria.
+De la misma manera que R cuenta con una terminal de comandos desde donde se accede al motor de R. De las principales ventajas de RStudio se encuentran:
+
+* Manejo de versiones
+* Manejo de gráficos en diversos formatos
+* Manipulación de datos usando librerias
+* Interacción con R desde paquetes como *R Commander* y *R Excel*
+* Revolutions Analytics
+
+# Iniciando con R
+
+```{r}
+2 + 2  # Matematica Básica; Mac: cmd-enter; PC: ctrl-r
+
+1:100  # Imprimir los numeros de 1 al 100
+
+print("Hello World!")  # Imprime "Hello World" en la pantalla
+
+# Variables
+x <- 1:5  # Asigna los numero del 1 al 5 a la variable x
+x  # Muestra el valor de x
+y <- c(6, 7, 8, 9, 10)  # Combina en una lista los numeros del 1 al 60 a y
+y  # imprime y
+x + y  # Suma el valor de los elementos de x a los elementos de y
+x * 2  # Multiplica cada elemento en  x por 2
+
+```
