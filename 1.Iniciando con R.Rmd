@@ -1,3 +1,8 @@
+---
+output: 
+  html_document: 
+    theme: cerulean
+---
 
 # Iniciando con R
 R es el más poderoso lenguaje de programación para estadistica numerica, fue desarrollado por un grupo de profesores para motivar a sus estudiantes a aprender estadística.
@@ -12,9 +17,11 @@ Unicamente es necesario ir a http://www.r-project.org una vez ahi seleccionar la
 R se viene en tres diferentes versiones. Para nuestro caso instalaremos la version *base* desde la cual podremos instalar los paquetes adicionales de este curso. El tiempo de descarga varia de 5 a 10 min.
 
 ![Imagen1](images/Introduccion/r-cran3.png)
-* base
-* contrib
-* R tools  
+
+## Versiones de R
+- base   
+- contrib   
+- R tools   
 
 
 
@@ -35,7 +42,7 @@ De la misma manera que R cuenta con una terminal de comandos desde donde se acce
 * Interacción con R desde paquetes como *R Commander* y *R Excel*
 * Revolutions Analytics
 
-# Iniciando con R
+# Primeros pasos con R
 
 ```{r}
 2 + 2  # Matematica Básica; Mac: cmd-enter; PC: ctrl-r
@@ -44,7 +51,7 @@ De la misma manera que R cuenta con una terminal de comandos desde donde se acce
 
 print("Hello World!")  # Imprime "Hello World" en la pantalla
 
-# Variables
+#' Creando Variables en R
 x <- 1:5  # Asigna los numero del 1 al 5 a la variable x
 x  # Muestra el valor de x
 y <- c(6, 7, 8, 9, 10)  # Combina en una lista los numeros del 1 al 60 a y
@@ -52,4 +59,65 @@ y  # imprime y
 x + y  # Suma el valor de los elementos de x a los elementos de y
 x * 2  # Multiplica cada elemento en  x por 2
 
+
+
 ```
+## Manejo de listas en R (subsetting)
+
+### Uso de la funcion **c**
+La función "c" concatena (agrupa, junta) elementos sueltos en un vector.
+```{r}
+v0 <- c(67,12,1,-99,0.44,333.22)
+v1 <- c("chivas","tuzos","monarcas")
+v2 <- c(TRUE,FALSE,TRUE)
+```
+
+
+
+- Los elementos son del mismo tipo en el caso de concatenar, no así en los dataset que pueden mezclar números,letras,booleanos.
+- Para acceder a los elementos se utilizar los corchetes "[]"
+```{r}
+E <- v0[5]  # accedemos al elemento 5 de la lista v0
+E       #imprimos el contenido de E
+```
+
+
+
+### Multiples selecciones 
+
+#### Los dataFrame
+
+- Sea una lista de músicos representada con sus años de nacimiento y el instrumento que interpretan.
+```{r}
+
+## Tipos DataFrame
+
+df <- data.frame(
+      name = c('John','Paul', 'George', 'Ringo'),
+      birth = c(1940,1942,1943,1940),
+      instrument = c("Guitar","Bass","guitar","drums")
+      
+        )
+
+df # imprimimos el contenido de df
+```
+
+- Si deseamos acceder a más de un elemento de la lista usamos el índice del elemento.
+```{r}
+
+df [c(2,4),c(2,3)]
+```
+### Uso de $:$ en vectores
+```{r}
+#df[1:4]
+df[c(1:4),2]
+```
+
+```{r}
+df[-c(2:4),2:3]
+```
+
+
+
+## Siguiente: Manejo de Ficheros en R
+
