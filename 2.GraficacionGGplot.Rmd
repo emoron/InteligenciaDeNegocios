@@ -1,0 +1,41 @@
+
+```{R}
+library(ggplot2)
+#plot(iris.$Sepal.Width,iris$Sepal.Length)
+
+```
+## Visualizando Diferentes Conjuntos de Datos
+```{r}
+?mpg
+View(mpg)
+qplot(disp,hwy, data=mpg)
+qplot(displ,hwy, data=mpg,color=class)
+qplot(displ,hwy, data=mpg,color=class,shape=trans)
+```
+
+
+# Utilizemos Facetting
+```{r}
+
+qplot(displ,hwy, data=mpg)+
+  facet_grid(drv ~ cyl)
+qplot(displ,hwy, data=mpg)+
+  facet_grid(drv ~ .)
+qplot(displ,hwy, data=mpg)+
+  facet_grid(. ~ cyl)
+qplot(displ,hwy, data=mpg)+
+  facet_wrap( ~ class)
+```
+
+# Using Geom
+qplot(displ,hwy,data=mpg,geom="smooth")
+qplot(class,hwy,data=mpg,geom="boxplot")
+qplot(reorder(class,hwy,FUN=median),hwy,data=mpg,geom="boxplot")
+#Using Bar charts
+
+```{r}
+qplot(x,z,data=diamonds)
+qplot(x,data=diamonds)
+qplot(cut,data=diamonds)
+```
+

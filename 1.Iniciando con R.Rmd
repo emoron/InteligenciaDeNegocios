@@ -1,26 +1,32 @@
 ---
+title: "Graficación en R"
+author: "Edgardo Morales"
+date: "22 de septiembre de 2015"
 output: 
   html_document: 
-    theme: cerulean
+    theme: readable
 ---
 
 # Iniciando con R
-R es el más poderoso lenguaje de programación para estadistica numerica, fue desarrollado por un grupo de profesores para motivar a sus estudiantes a aprender estadística.
 
-R es completamente gratuito y está disponible para Windows, Mac y Linux y la instalacion es sumamente simple.
+- R es el más poderoso lenguaje de programación para estadistica numerica, fue desarrollado por un grupo de profesores para motivar a sus estudiantes a aprender estadística.
+
+-  R es completamente gratuito y está disponible para Windows, Mac y Linux y la instalacion es sumamente simple.
+- Unicamente es necesario ir a http://www.r-project.org una vez ahi seleccionar la opcion **CRAN** y elegir uno de los sitios de descarga para nuestro caso seleccionamos **0-cloud**.
+
 
 ![Imagen1](images/Introduccion/r-cran.png)
 
-Unicamente es necesario ir a http://www.r-project.org una vez ahi seleccionar la opcion **CRAN** y elegir uno de los sitios de descarga para nuestro caso seleccionamos **0-cloud**.
 
 ![Imagen1](images/Introduccion/r-cran2.png)
-R se viene en tres diferentes versiones. Para nuestro caso instalaremos la version *base* desde la cual podremos instalar los paquetes adicionales de este curso. El tiempo de descarga varia de 5 a 10 min.
 
 ![Imagen1](images/Introduccion/r-cran3.png)
 
 ## Versiones de R
-- base   
-- contrib   
+- R se viene en tres diferentes versiones. Para nuestro caso instalaremos la version *base* desde la cual podremos instalar los paquetes adicionales de este curso. El tiempo de descarga varia de 5 a 10 min.
+
+  - base   
+  - contrib     
 - R tools   
 
 
@@ -121,3 +127,12 @@ df[-c(2:4),2:3]
 
 ## Siguiente: Manejo de Ficheros en R
 
+- R tiene herramientas para importar diferentes tipos de archivos.
+- Los más utiles para análisis son los archivos de _texto plano_   
+- Los archivo de _texto plano_ son cualquier archivo que pueda ser legible por los humanos sin requerir de ningun programa (ejemplo: .txt, csv, .xml, html).
+- Los archivos de texto son secuencias de caracteres.
+- Cada caracter equivale a un solo byte de datos.
+- Los archivos pueden ser manipulados con un editor de texto.
+
+
+![Imagen1](images/archivos/archivos-ejemplo.png)
