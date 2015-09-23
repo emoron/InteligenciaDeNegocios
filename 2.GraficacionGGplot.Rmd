@@ -1,16 +1,39 @@
+---
+title: "Graficación en R"
+author: "Edgardo Morales"
+date: "22 de septiembre de 2015"
+output: 
+  html_document: 
+    theme: readable
+---
+## Graficación en R ()
+
+```{r eval=FALSE} 
+plot(iris$Sepal.Width ,iris$Sepal.Length)
+```
+
+
 
 ```{R}
 library(ggplot2)
-#plot(iris.$Sepal.Width,iris$Sepal.Length)
+plot(iris$Sepal.Width,iris$Sepal.Length)
 
 ```
+
+- Es el método más simple de R para graficación   
+- Realiza diferentes acciones dependiendo del contexto   
+- Es sumamente complicado personalizar   
+
+![Imagen1](images/graficacion/ggplt2-sepals.png)
+
 ## Visualizando Diferentes Conjuntos de Datos
 ```{r}
-?mpg
-View(mpg)
-qplot(disp,hwy, data=mpg)
-qplot(displ,hwy, data=mpg,color=class)
-qplot(displ,hwy, data=mpg,color=class,shape=trans)
+library(ggplot2)
+#?mpg #ver la ayuda de un dataset
+#View(mpg)
+#qplot(disp,hwy, data=mpg)
+#qplot(displ,hwy, data=mpg,color=class)
+#qplot(displ,hwy, data=mpg,color=class,shape=trans)
 ```
 
 
@@ -28,14 +51,45 @@ qplot(displ,hwy, data=mpg)+
 ```
 
 # Using Geom
-qplot(displ,hwy,data=mpg,geom="smooth")
-qplot(class,hwy,data=mpg,geom="boxplot")
-qplot(reorder(class,hwy,FUN=median),hwy,data=mpg,geom="boxplot")
-#Using Bar charts
+- En ocasiones cuando tenemos una gráfica de puntos es complicado observar la tendencia de los datos, ocasionado por la cantidad de puntos, para ello podemos agregar una linea suavizada a la gráfica.
+```{r , echo=FALSE}
+set.seed(1410)
+dsmall <- diamonds[sample(nrow(diamonds),100),]
+```
+```{r}
+library(mgcv)
+qplot(carat,price,data=dsmall, geom=c("point","smooth"), span=1, method = "gam", formula = y ~ s(x))
+```
+
+### Cajas
+
+- Cuando un conjunto de datos contiene una variable categorica y una o más variables continuas, problemente sea más interesante conocer como los valores de la variable continua varia con los niveles de la variable categorica.
 
 ```{r}
-qplot(x,z,data=diamonds)
-qplot(x,data=diamonds)
-qplot(cut,data=diamonds)
+qplot(color, price / carat, data = diamonds, geom = "boxplot")
+```
+
+```{r}
+
+qplot(class,hwy,data=mpg,geom="boxplot")
+qplot(reorder(class,hwy,FUN=median),hwy,data=mpg,geom="boxplot")
+```
+![Imagen1](images/graficacion/ggplt2-boxplots1.png)
+![Imagen1](images/graficacion/ggplt2-boxplots2.png)
+![Imagen1](images/graficacion/ggplt2-boxplots3.png)
+![Imagen1](images/graficacion/ggplt2-boxplots4.png)
+![Imagen1](images/graficacion/ggplt2-boxplots5.png)
+
+# Usando gráficos de Barras y Densidad
+
+```{r}
+qplot(carat,data=diamonds, geom="histogram")
+qplot(carat,data=diamonds, geom="density" )
+qplot(carat, data = diamonds, geom = "histogram", binwidth = 1,
+  xlim = c(0,3))
+qplot(carat, data = diamonds, geom = "histogram", binwidth = 0.1,
+  xlim = c(0,3))
+qplot(carat, data = diamonds, geom = "histogram", binwidth = 0.01,
+  xlim = c(0,3))
 ```
 
