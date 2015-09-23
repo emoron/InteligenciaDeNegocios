@@ -93,3 +93,19 @@ qplot(carat, data = diamonds, geom = "histogram", binwidth = 0.01,
   xlim = c(0,3))
 ```
 
+## Creando Mapas con R
+- Ejercicio usando el archivo texas.csv crear el gráfico usando los siguientes parametros
+```
+geom="polygon"
+group = group
+fill = group
+```
+
+
+```{r eval=FALSE }
+texas <- read.csv("datos/texas.csv",header = TRUE)
+tx <- qplot(long,lat,data=texas,geom="polygon",group=group,fill=group)
+tx <- ggtitle("Poblacion de los condades de Texas")
+
+```
+

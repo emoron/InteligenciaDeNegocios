@@ -50,10 +50,10 @@ De la misma manera que R cuenta con una terminal de comandos desde donde se acce
 
 # Primeros pasos con R
 
-```{r}
+```{r eval=FALSE}
 2 + 2  # Matematica Básica; Mac: cmd-enter; PC: ctrl-r
 
-1:100  # Imprimir los numeros de 1 al 100
+1:50  # Imprimir los numeros de 1 al 50
 
 print("Hello World!")  # Imprime "Hello World" en la pantalla
 
@@ -68,6 +68,14 @@ x * 2  # Multiplica cada elemento en  x por 2
 
 
 ```
+### Secuencias
+```{r}
+x <- seq(1,5,1)
+s1 <- sum(x) #suma de los elementos de x
+sc <-cumsum(x) # suma acumulativa
+sp <-cumprod(x) # producto acumulativo
+```
+
 ## Manejo de listas en R (subsetting)
 
 ### Uso de la funcion **c**
@@ -136,3 +144,42 @@ df[-c(2:4),2:3]
 
 
 ![Imagen1](images/archivos/archivos-ejemplo.png)
+
+## Importar archivos de texto plano
+```{r , eval=FALSE}
+o <- read.table("datos/HuracanesMexico_14marzo2011.txt",header = TRUE)
+odf <- data.frame(o)
+```
+
+```
+print(Nombre):  imprime en pantalla el archivo con los datos
+
+names(Nombre): detecta los nombre de las columnas
+
+cbind(Nombre1,Nombre2,…,NombreX): junta columnas específicas
+
+rbind(Nombre1,Nombre2) : junta conjuntos de renglones
+
+unique(Nombre): detecta los elementos diferentes en una columna
+```
+- Más funciones de lectura de archivos:   
+
+```
+read.csv( )   archivos “comma separated values”
+scan( )   archivos de tipo: logical, integer, numeric, complex, character, raw and list.       
+``` 
+
+- Para Manejo de datos, elaboración de subconjuntos y  las funciones: 
+```
+summary(… 
+ tapply(…mean, var, length)
+ ftable(tapply(…
+ unique(…
+ length(…
+```
+
+- El simbolo "$" nos permite acceder a las columnas de un archivo
+```
+NombreArchivo$NombreColumna
+```
+
