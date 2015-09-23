@@ -240,8 +240,13 @@ scan( )   archivos de tipo: logical, integer, numeric, complex, character, raw a
  ftable(tapply(…
  unique(…
  length(…</code></pre></li>
-<li><p>El simbolo “<span class="math inline">\(&quot; nos permite acceder a las columnas de un archivo ``` NombreArchivo\)</span>NombreColumna ```</p></li>
+<li><p>El simbolo <code>$</code> nos permite acceder a las columnas de un archivo</p>
+<pre><code>NombreArchivo$NombreColumna</code></pre>
+<h3 id="leer-datos-de-un-archivo-xls">Leer datos de un archivo xls</h3></li>
 </ul>
+<pre><code>install.packages(&quot;xlsx&quot;)
+library(xslx)
+data &lt;- read.xlsx(&quot;datafile.xlsx&quot;, 1)</code></pre>
 </div>
 </div>
 

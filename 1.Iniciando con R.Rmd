@@ -178,8 +178,14 @@ summary(…
  length(…
 ```
 
-- El simbolo "$" nos permite acceder a las columnas de un archivo
+- El simbolo ```$```  nos permite acceder a las columnas de un archivo
 ```
 NombreArchivo$NombreColumna
 ```
-
+### Leer datos de un archivo xls
+   
+```
+install.packages("xlsx")
+library(xslx)
+data <- read.xlsx("datafile.xlsx", 1)
+```
