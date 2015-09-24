@@ -2,8 +2,9 @@
 title: "Graficación en R"
 author: "Edgardo Morales"
 date: "22 de septiembre de 2015"
-output: 
-  html_document: 
+output:
+  pdf_document: default
+  html_document:
     theme: readable
 ---
 ## Graficación en R ()
